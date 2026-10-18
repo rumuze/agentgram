@@ -123,6 +123,20 @@ php artisan rumuze:edit start --daemon
 
 ---
 
+### 4. Via Docker Compose (Headless VPS & Servers)
+
+Run 24/7 on any cloud server or VPS:
+
+```bash
+# Clone and enter directory
+git clone https://github.com/rumuze/rumuze-edit.git && cd rumuze-edit
+
+# Run with your credentials
+TG_BOT_TOKEN="your_bot_token" TG_ALLOWED_CHAT_ID="your_chat_id" docker compose up -d
+```
+
+---
+
 ## 🎮 Telegram Controls & Features
 
 Once connected, your Telegram bot becomes your project dashboard:

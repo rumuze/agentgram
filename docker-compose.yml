@@ -1,0 +1,23 @@
+services:
+  rumuze-edit:
+    image: rumuze/rumuze-edit:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: rumuze-edit-control-room
+    restart: unless-stopped
+    environment:
+      - TG_BOT_TOKEN=${TG_BOT_TOKEN:-}
+      - TG_ALLOWED_CHAT_ID=${TG_ALLOWED_CHAT_ID:-}
+      - NODE_ENV=production
+    volumes:
+      # Mount the project directory you want the agent to control
+      - ./workspace:/workspace
+      # Persist credentials and state outside the container
+      - rumuze_config:/root/.config/rumuze-edit
+    # Network mode host or loopback access
+    network_mode: bridge
+
+volumes:
+  rumuze_config:
+    driver: local

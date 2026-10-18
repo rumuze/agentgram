@@ -1,0 +1,10 @@
+.git
+.github
+node_modules
+tests/__pycache__
+core/__pycache__
+*.pyc
+*.pyo
+*.tmp
+*.log
+.DS_Store
